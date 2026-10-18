@@ -1,5 +1,5 @@
 // bich nwariw ts ili req.user exist fi kol request
-//  Express's Requent ma3andhech type user donc nzidouha lina
+//  Express's Request ma3andhech type user donc nzidouha lina to prevent compile errors
 declare global {
     namespace Express {
         interface Request {

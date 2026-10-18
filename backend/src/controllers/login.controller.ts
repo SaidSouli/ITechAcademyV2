@@ -40,7 +40,7 @@ export async function login (req:Request,res:Response){
         return res.status(500).json({ message: "Something went wrong" });
     }
 }
-
+//function ntesti biha
 export async function me(req: Request, res: Response) {
     if (!req.user) {
         

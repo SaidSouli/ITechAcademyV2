@@ -1,3 +1,6 @@
+// na3mlou verification lil data ili bich na5dhouha mil .env 
+// secure and scalable 
+
 import "dotenv/config";
 import type { SignOptions } from "jsonwebtoken";
 import * as z from "zod";

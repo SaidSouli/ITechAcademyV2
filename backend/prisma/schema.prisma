@@ -66,4 +66,15 @@ model User {
   fullname String @db.VarChar(255)
 
   enrollments Enrollment[]
+  refreshTokens RefreshToken[]
 }
+model RefreshToken{
+  id String @id 
+  userId Int 
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId] , references:[id],onDelete:Cascade)
+
+}
+
+

@@ -18,5 +18,3 @@ export const registerSchema = z.object({
     .min(8,{error:'password must be at least 8 characters'}),
 
 });
-
-export type RegisterInput = z.infer<typeof registerSchema>;
