@@ -90,7 +90,29 @@ export async function enrollCourse(req:Request,res:Response){
             });
         }
     }
+}
 
+export async function myCourses(req:Request,res:Response){
+    
+    const userId = req.user?.id
+    if(!userId){
+        return res.status(401).json({message:"log in first"})
+    }
+    try{
+
+        const enrollments = await prisma.enrollment.findMany({
+            where:{
+                studentId:userId,
+            },
+            include:{course:{include:{trainer:true}}}
+        })
+        const mycourses = enrollments.map((e)=> e.course);
+
+        return res.status(200).json(mycourses);
+    }catch(e){
+        console.log(e)
+        return res.status(500).json({message:"something went wrong"})
+    }
 
 
 }

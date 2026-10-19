@@ -17,6 +17,7 @@ app.use("/api/auth", authRoutes);
 
 app.use("/api/courses",courseRoutes);
 
+
 const PORT = process.env.PORT; 
 
 app.listen(PORT, () =>{
