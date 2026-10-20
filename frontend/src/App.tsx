@@ -6,6 +6,7 @@ import { AuthProvider } from "./context/AuthContext";
 import Layout from "./component/layout";
 import CoursesPage from "./pages/courses";
 import CourseShow from "./pages/CourseShow";
+import MyCoursesPage from "./pages/myCourses";
 
 export default function App() {
     return (
@@ -19,7 +20,7 @@ export default function App() {
                         <Route element={<ProtectedRoute />}>
                             <Route path="/courses" element={<CoursesPage/>} />
                             <Route path="/courses/:id" element={<CourseShow/>} />
-                            
+                            <Route path="/courses/enrolled" element={<MyCoursesPage/>} />
                         </Route>
                     </Route>
                 </Routes>

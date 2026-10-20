@@ -53,7 +53,7 @@ export default function Navbar() {
                         ) : (
                             <>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/my-courses">My courses</NavLink>
+                                    <NavLink className="nav-link" to="/courses/enrolled">My courses</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <button className="nav-link btn" onClick={handleLogout}>Logout</button>

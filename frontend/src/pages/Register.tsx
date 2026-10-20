@@ -1,6 +1,8 @@
 import { useState } from "react";
 import type { SubmitEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import api from "../lib/api";
+
 
 export default function Register() {
     const [fullname, setFullname] = useState("");
@@ -16,24 +18,7 @@ export default function Register() {
         setLoading(true);
 
         try {
-            const res = await fetch("/api/auth/register", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ fullname, email, password }),
-            });
-
-            const data = await res.json();
-
-            
-            if (res.status === 409) {
-                setError(data.message);
-                return;
-            }
-
-            if (!res.ok) {
-                setError(data.message ?? "Something went wrong");
-                return;
-            }
+            await api.post("/auth/register" , {fullname,email,password});
 
             navigate("/login"); 
         } catch {
