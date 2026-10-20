@@ -4,7 +4,7 @@ const api = axios.create({
     baseURL:"http://127.0.0.1:3000/api",
     withCredentials:true,
 });
-// intercept request mil frontend w yzidou il auth header
+//   yzid request il auth header
 api.interceptors.request.use((config) =>{
     const token = localStorage.getItem("accessToken");
     if (token){
